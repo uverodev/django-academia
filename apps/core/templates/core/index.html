@@ -65,9 +65,7 @@
 						<div class="col-md-4">
 							<div class="a">
 								<a href="#test-popup-{{forloop.counter}}" class="open-popup-link">
-									{% thumbnail object.image "360x250" crop="center" as im %}
-										<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"class="img-responsive" alt="Responsive image">
-									{% endthumbnail %}
+										<img src="{{ object.image.url }}" class="img-responsive" alt="Responsive image">
 									<div class="img-hover {{object.colour}}">
 										<div class="c-table">
 											<div class="ct-cell">
