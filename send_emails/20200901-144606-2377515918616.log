@@ -1,0 +1,18 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Please Confirm Your E-mail Address
+From: webmaster@localhost
+To: uverodevpy@gmail.com
+Date: Tue, 01 Sep 2020 18:46:06 -0000
+Message-ID: <159898596609.6756.14602120415172841997@DESKTOP-3ITVCLU>
+
+Hello from example.com!
+
+You're receiving this e-mail because user nicoxdxdxdd has given yours as an e-mail address to connect their account.
+
+To confirm this is correct, go to http://localhost:8000/accounts/confirm-email/Mg:1kDBIE:h_ZGV9z_0MFJOT9nRsF7nCbEklgvI5o4RrkaVtDXr9c/
+
+Thank you from example.com!
+example.com
+-------------------------------------------------------------------------------

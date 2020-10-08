@@ -40,7 +40,7 @@ class Instructor(models.Model):
 class Course(models.Model):
     id = models.AutoField(primary_key = True)
     name = models.CharField('Nombre de la Categoria', max_length = 100, blank = False, null = False)
-    descripcion = models.TextField('Descripción', blank = False, null = False)
+    description = models.TextField('Descripción', blank = False, null = False)
     category = models.ManyToManyField(Category)
     instructor = models.ForeignKey(Instructor, on_delete=models.DO_NOTHING)
     video = models.CharField('Video de Presentación', max_length=20, blank = False, null = False)

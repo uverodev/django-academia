@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block titulo %}{% block head_title %}{% endblock head_title %}{% endblock titulo %}
+{% block barra_busqueda %}{% endblock %}
+
+{% block body %}
+<style>.errorlist{color:red;} label{display:None}</style>
+<br><br><br>
+<div class="container">
+{% block content %}
+{% endblock content %}
+</div>
+{% endblock body %}	
+	
+	

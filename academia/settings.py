@@ -32,13 +32,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.messages',
+    'django.contrib.sites',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    
+
     'apps.core',
+    'apps.accounts',
     'apps.courses',
     'apps.students',
     'apps.countries',
@@ -75,7 +83,10 @@ TEMPLATES = [
         },
     },
 ]
-
+AUTHENTIFICATION_BACKENDS = [
+        'django.contrib.auth.backends.ModelBackend',
+        'allauth.account.auth_backends.AuthenticationBackend',
+]
 WSGI_APPLICATION = 'academia.wsgi.application'
 
 DATABASES = {
@@ -148,3 +159,7 @@ SITE_ID = 1
 CORS_ORIGIN_ALLOW_ALL = True
 
 django_heroku.settings(locals())
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
