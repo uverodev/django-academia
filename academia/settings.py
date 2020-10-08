@@ -89,13 +89,17 @@ AUTHENTIFICATION_BACKENDS = [
 ]
 WSGI_APPLICATION = 'academia.wsgi.application'
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Ejemplo_DB',
+        'USER': 'Ejemplo_Usuario',
+        'PASSWORD': 'password_usuario',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -133,6 +137,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dfnv63uhphcrcu',
+        'USER': 'fkjswhkafpvipr',
+        'PASSWORD': '6ecad06c13d083e599f26ab04793c02f2840f93f9f3b8db6881129c172b376d6',
+        'HOST': 'ec2-54-160-161-214.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 # Static
 
