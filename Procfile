@@ -1,1 +1,1 @@
-web: gunicorn tutienda_backend.wsgi --log-file -
+web: gunicorn academia.wsgi --log-file -
