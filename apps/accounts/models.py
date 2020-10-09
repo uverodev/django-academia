@@ -21,6 +21,8 @@ class Profile(models.Model):
         verbose_name_plural = 'Perfiles'
         ordering = ['last_name']
 
+    def __str__(self):
+        return "{}, {}".format(self.firs_name, self.last_name)
 
 
 @receiver(post_save, sender=User)

@@ -229,33 +229,37 @@
             <div class="container">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="row">
+                            <div class="row">   
+                                    {% for course in course_list %}
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
                                                 <a href="#">
-                                                    <img src="{% static 'img/courses/1.png' %}" alt="">
+                                                    <img src="{{course.image.url}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="courses_info">
-                                                <span>Photoshop</span>
-                                                <h3><a href="#">Mobile App design step by step <br>
-                                                        from beginner</a></h3>
+                                                {% for category in course.category.all %}
+                                                <span>{{category.name}}</span>
+                                                {% endfor %}
+                                                <h3><a href="#">{{course.name}}</a></h3>
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="star">
                                                         <i class="flaticon-mark-as-favorite-star"></i>
-                                                        <span>(4.5)</span>
+                                                        <span>({{course.qualification}})</span>
                                                     </div>
                                                     <div class="prise">
-                                                        <span class="offer">$89.00</span>
+                                                        <!-- <span class="offer">USD </span> !-->
                                                         <span class="active_prise">
-                                                            $49
+                                                           USD {{course.price}}
                                                         </span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    {% endfor %}
+
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
