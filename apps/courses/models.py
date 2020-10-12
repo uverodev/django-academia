@@ -18,6 +18,9 @@ class Category(models.Model):
 class Instructor(models.Model):
     id = models.AutoField(primary_key = True)
     name = models.CharField('Nombre del Instructor', max_length = 100, blank = False, null = False)
+    description = models.TextField('Descripción', blank = False, null = False, default = "Vacio")
+    facebook = models.URLField('Link de su Pagina de FB', blank = True, null = True)
+    email =  models.EmailField('Correo Electronico', blank = True, null = True)
     date_created = models.DateTimeField(auto_now_add = True)
     
     class Meta:
@@ -47,3 +50,19 @@ class Course(models.Model):
     
     def __str__(self):
         return "{}, {}".format(self.name, self.qualification)
+
+
+class Question(models.Model):
+    id = models.AutoField(primary_key = True)
+    course = models.ForeignKey(Course, on_delete=models.DO_NOTHING)
+    question = models.CharField('Pregunta', max_length = 100, blank = False, null = False)
+    answer = models.CharField('Respuesta', max_length = 255, blank = False, null = False)
+    order = models.IntegerField('Orden de Prioridades', blank = False, null = False, default = 5)
+
+    class Meta:
+        verbose_name = 'Pregunta'
+        verbose_name_plural = 'Preguntas'
+        ordering = ["id", "order"]
+    
+    def __str__(self):
+        return "{} - {}".format(self.question, self.course.name)

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Edumark</title>
+    <title>{% block title %}Inicio{% endblock title %} - E-Tekombo-e</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -91,7 +91,7 @@
         </div>
     </header>
     <!-- header-end -->
-
+    {% block content %}
     <!-- slider_area_start -->
     <div class="slider_area ">
         <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
@@ -210,7 +210,7 @@
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="#">
+                                                <a href="{% url 'course_detail' course.id %}">
                                                     <img src="{{course.image.url}}" alt="">
                                                 </a>
                                             </div>
@@ -218,7 +218,7 @@
                                                 {% for category in course.category.all %}
                                                 <span>{{category.name}}</span>
                                                 {% endfor %}
-                                                <h3><a href="#">{{course.name}}</a></h3>
+                                                <h3><a href="{% url 'course_detail' course.id %}">{{course.name}}</a></h3>
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="star">
                                                         <i class="flaticon-mark-as-favorite-star"></i>
@@ -247,13 +247,13 @@
                                     <div class="col-xl-4 col-lg-4 col-md-6  col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="#">
+                                                <a href="{% url 'course_detail' course.id %}">
                                                     <img src="{{course.image.url}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="courses_info">
                                                 <span>{{category.name}}</span>
-                                                <h3><a href="#">{{course.name}}</a></h3>
+                                                <h3><a href="{% url 'course_detail' course.id %}">{{course.name}}</a></h3>
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="star">
                                                         <i class="flaticon-mark-as-favorite-star"></i>
@@ -450,7 +450,7 @@
     </div>
     <!-- our_latest_blog_end -->
 
-
+    {% endblock content %}
     <!-- footer -->
     <footer class="footer footer_bg_1">
         <div class="footer_top">
