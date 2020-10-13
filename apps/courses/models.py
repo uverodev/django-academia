@@ -18,7 +18,9 @@ class Category(models.Model):
 class Instructor(models.Model):
     id = models.AutoField(primary_key = True)
     name = models.CharField('Nombre del Instructor', max_length = 100, blank = False, null = False)
+    subtitulo = models.CharField('Subtitulo del Instructor', max_length = 100, blank = False, null = False, default = "Vacio")
     description = models.TextField('Descripción', blank = False, null = False, default = "Vacio")
+    image = models.ImageField('Imagen de Perfil', upload_to='instructor', blank = True, null = True)
     facebook = models.URLField('Link de su Pagina de FB', blank = True, null = True)
     email =  models.EmailField('Correo Electronico', blank = True, null = True)
     date_created = models.DateTimeField(auto_now_add = True)
