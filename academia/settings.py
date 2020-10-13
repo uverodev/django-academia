@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.courses',
     'apps.students',
     'apps.countries',
+    'apps.opinion',
     'sorl.thumbnail',
     'import_export',
     'corsheaders',

@@ -23,7 +23,6 @@ class Instructor(models.Model):
     image = models.ImageField('Imagen de Perfil', upload_to='instructor', blank = True, null = True)
     facebook = models.URLField('Link de su Pagina de FB', blank = True, null = True)
     email =  models.EmailField('Correo Electronico', blank = True, null = True)
-    date_created = models.DateTimeField(auto_now_add = True)
     
     class Meta:
         verbose_name = 'Instructor'
@@ -40,7 +39,7 @@ class Course(models.Model):
     instructor = models.ForeignKey(Instructor, on_delete=models.DO_NOTHING)
     video = models.CharField('Video de Presentación', max_length=20, blank = False, null = False)
     image = models.ImageField('Imagen de Presentación', upload_to='courses', blank = True, null = True)
-    qualification = models.SmallIntegerField('Calificación', blank = False, null = False, default = 0)
+    qualification = models.DecimalField('Calificación', max_digits=3, decimal_places=2)
     price = models.SmallIntegerField('Precio', blank = False, null = False, default = 10)
     date_created = models.DateTimeField(auto_now_add = True)
     status = models.BooleanField('Estado', default = True)
@@ -68,3 +67,4 @@ class Question(models.Model):
     
     def __str__(self):
         return "{} - {}".format(self.question, self.course.name)
+

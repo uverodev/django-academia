@@ -8,11 +8,12 @@ from django.db.models.signals import post_save
 class Profile(models.Model):
     id = models.AutoField(primary_key = True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    firs_name = models.CharField(max_length = 200, blank = True, null = True)
-    last_name = models.CharField(max_length = 220, blank = True, null = True)
-    document = models.CharField(max_length = 15, blank = True, null = True)
-    number = models.CharField(max_length = 20, blank = True, null = True)
-    descripcion = models.TextField(blank = True,null = True)
+    firs_name = models.CharField('Nombres', max_length = 200, blank = True, null = True)
+    last_name = models.CharField('Apellidos', max_length = 220, blank = True, null = True)
+    document = models.CharField('Número de Documento', max_length = 15, blank = True, null = True)
+    number = models.CharField('Celular', max_length = 20, blank = True, null = True)
+    descripcion = models.TextField('Descripcion', blank = True, null = True)
+    image = models.ImageField('Imagen de Perfil', upload_to='profile', blank = True, null = True)
     estado = models.BooleanField('Estado', default = True)
     fecha_creacion = models.DateField('Fecha de creación', auto_now = True, auto_now_add = False)
 
